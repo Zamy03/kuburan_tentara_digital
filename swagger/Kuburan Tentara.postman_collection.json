@@ -1,0 +1,812 @@
+{
+	"info": {
+		"_postman_id": "02c58822-e877-40cd-8687-feeac5aaa10f",
+		"name": "Kuburan Tentara",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33355391"
+	},
+	"item": [
+		{
+			"name": "AUTH",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"kucing\",\r\n    \"email\": \"kucingoyen12@gmail.com\",\r\n    \"password\": \"oyen\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/regis",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"regis"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"kucing\",\r\n    \"email\": \"kucingoyen12@gmail.com\",\r\n    \"password\": \"oyen\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Data Mayat",
+			"item": [
+				{
+					"name": "GET",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imt1Y2luZyIsImV4cCI6MTcxOTY4MDExM30.3FC6aDGh55sYXNcTD7y4gnlqDWiwT4jI9-t1uPw1MjQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/datamayat",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"datamayat"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imt1Y2luZyIsImV4cCI6MTcxOTY4MzA5M30.GtMRdwlR42BUEzGdv3Q1xp-dqzyE3TpV_4jYWaWN_gw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nama_lengkap",
+									"value": "Simon Riley",
+									"type": "text"
+								},
+								{
+									"key": "pangkat",
+									"value": "Lieutenant",
+									"type": "text"
+								},
+								{
+									"key": "tanggal_lahir",
+									"value": "1984-05-17",
+									"type": "text"
+								},
+								{
+									"key": "tanggal_wafat",
+									"value": "2016-08-15",
+									"type": "text"
+								},
+								{
+									"key": "nomor_identitas",
+									"value": "123456789",
+									"type": "text"
+								},
+								{
+									"key": "foto_tentara",
+									"type": "file",
+									"src": "postman-cloud:///1ef362a9-9d89-48d0-b171-8498ccf8369b"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/datamayat",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"datamayat"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imt1Y2luZyIsImV4cCI6MTcxOTY4MjgxNH0.Rv9sezU304KvcXEbQ4R8gpKI4NR2MdLKT4LykAIEGHA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nama_lengkap",
+									"value": "Simon Riley",
+									"type": "text"
+								},
+								{
+									"key": "pangkat",
+									"value": "Lieutenant",
+									"type": "text"
+								},
+								{
+									"key": "tanggal_lahir",
+									"value": "1984-05-17",
+									"type": "text"
+								},
+								{
+									"key": "tanggal_wafat",
+									"value": "2016-08-15",
+									"type": "text"
+								},
+								{
+									"key": "nomor_identitas",
+									"value": "100398766",
+									"type": "text"
+								},
+								{
+									"key": "foto_tentara",
+									"type": "file",
+									"src": "postman-cloud:///1ef362a9-9d89-48d0-b171-8498ccf8369b"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/datamayat/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"datamayat",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imt1Y2luZyIsImV4cCI6MTcxOTY4MzA5M30.GtMRdwlR42BUEzGdv3Q1xp-dqzyE3TpV_4jYWaWN_gw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/datamayat/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"datamayat",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Plot Pemakaman",
+			"item": [
+				{
+					"name": "GET",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/plotpemakaman",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"plotpemakaman"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imt1Y2luZyIsImV4cCI6MTcxOTcxNzQ4Mn0.DEGmZWx8rlz7eNKLzn0mExuebE9Pa7aCNgVyjhiCVfE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nomor_plot\": \"A1\",\r\n    \"status_plot\": \"Terisi\",\r\n    \"keterangan\": \"Plot untuk tentara A\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/plotpemakaman",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"plotpemakaman"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imt1Y2luZyIsImV4cCI6MTcxOTcxNzQ4Mn0.DEGmZWx8rlz7eNKLzn0mExuebE9Pa7aCNgVyjhiCVfE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nomor_plot\": \"A1\",\r\n    \"status_plot\": \"tersedia\",\r\n    \"keterangan\": \"Plot untuk tentara A\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/plotpemakaman/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"plotpemakaman",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imt1Y2luZyIsImV4cCI6MTcxOTcxNzQ4Mn0.DEGmZWx8rlz7eNKLzn0mExuebE9Pa7aCNgVyjhiCVfE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/plotpemakaman/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"plotpemakaman",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Kuburan",
+			"item": [
+				{
+					"name": "GET",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/kuburan",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"kuburan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imt1Y2luZyIsImV4cCI6MTcxOTcxODk0NX0.R1Q2l83Eg_jhSXQjVaMebA1Ye1M8r4gxqTK9XqHHVdI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"plot_id\": 2,\r\n    \"tentara_id\": 2,\r\n    \"nomor_kuburan\": \"01\",\r\n    \"tanggal_dikubur\": \"2016-08-15\",\r\n    \"status_kuburan\": \"terawat\",\r\n    \"keterangan\": \"kuburannya simon (ghost)\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/kuburan",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"kuburan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imt1Y2luZyIsImV4cCI6MTcxOTcxOTM2Nn0.l0mmc_0WCbBWDpru6KIOXtUEMIXkyVcK_bujsAGkRis",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"plot_id\": 2,\r\n    \"tentara_id\": 2,\r\n    \"nomor_kuburan\": \"01\",\r\n    \"tanggal_dikubur\": \"2016-08-15\",\r\n    \"status_kuburan\": \"tidak terawat\",\r\n    \"keterangan\": \"kuburannya simon (ghost)\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/kuburan/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"kuburan",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imt1Y2luZyIsImV4cCI6MTcxOTcxOTUzOH0.bTtXdUokhDDfAFSdkoOUoSN61YRhI7dPyx0xOrq9Pd4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/kuburan/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"kuburan",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pengelola Pemakaman",
+			"item": [
+				{
+					"name": "GET",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pengelolapemakaman",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pengelolapemakaman"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imt1Y2luZyIsImV4cCI6MTcxOTcxOTUzOH0.bTtXdUokhDDfAFSdkoOUoSN61YRhI7dPyx0xOrq9Pd4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nama_lengkap\": \"Budiandra Senjawa\",\r\n    \"jabatan\": \"Kepala Security\",\r\n    \"nomor_telepon\": \"087872711343\",\r\n    \"email\": \"senjawabudi1@gmail.com\",\r\n    \"alamat\": \"Jl. Pluto 2 Block 4 No.23\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pengelolapemakaman",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pengelolapemakaman"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imt1Y2luZyIsImV4cCI6MTcxOTcxOTUzOH0.bTtXdUokhDDfAFSdkoOUoSN61YRhI7dPyx0xOrq9Pd4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nama_lengkap\": \"Budiandra Senjawa\",\r\n    \"jabatan\": \"Pengawas 1\",\r\n    \"nomor_telepon\": \"087872711343\",\r\n    \"email\": \"senjawabudi1@gmail.com\",\r\n    \"alamat\": \"Jl. Pluto 2 Block 4 No.23\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pengelolapemakaman/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pengelolapemakaman",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imt1Y2luZyIsImV4cCI6MTcxOTcxOTUzOH0.bTtXdUokhDDfAFSdkoOUoSN61YRhI7dPyx0xOrq9Pd4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pengelolapemakaman/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pengelolapemakaman",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Kunjungan",
+			"item": [
+				{
+					"name": "GET",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/kunjungan",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"kunjungan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imt1Y2luZyIsImV4cCI6MTcxOTcyMTIzOH0.EScob1XwShz8QEJgWpR0cOwj6YsqhLXWK0vsbt-T-KE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"kuburan_id\": 2,\r\n    \"tanggal_kunjungan\": \"2016-09-20\",\r\n    \"nama_pengunjung\": \"Tommy Riley\",\r\n    \"hubungan\": \"brother\",\r\n    \"keterangan\": \"ziarah kubur\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/kunjungan",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"kunjungan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imt1Y2luZyIsImV4cCI6MTcxOTcyMTcxMn0.7s5LMKcsdujfCCsy_o0I-OOEqAg9QBAWRWegC-0BA34",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"kuburan_id\": 2,\r\n    \"tanggal_kunjungan\": \"2016-09-20\",\r\n    \"nama_pengunjung\": \"Beth Riley\",\r\n    \"hubungan\": \"sister-in-law\",\r\n    \"keterangan\": \"ziarah kubur\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/kunjungan/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"kunjungan",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imt1Y2luZyIsImV4cCI6MTcxOTcyMTcxMn0.7s5LMKcsdujfCCsy_o0I-OOEqAg9QBAWRWegC-0BA34",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/kunjungan/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"kunjungan",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
