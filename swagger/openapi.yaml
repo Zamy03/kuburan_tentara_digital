@@ -1,0 +1,413 @@
+openapi: 3.0.0
+info:
+  title: Kuburan Tentara
+  version: 1.0.0
+servers:
+  - url: https://130.162.195.228/mhs714220016/
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+tags:
+  - name: AUTH
+  - name: Data Mayat
+  - name: Plot Pemakaman
+  - name: Kuburan
+  - name: Pengelola Pemakaman
+  - name: Kunjungan
+paths:
+  /regis:
+    post:
+      tags:
+        - AUTH
+      summary: Register
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                username: kucing
+                email: kucingoyen12@gmail.com
+                password: oyen
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /login:
+    post:
+      tags:
+        - AUTH
+      summary: Login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                username: kucing
+                email: kucingoyen12@gmail.com
+                password: oyen
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /datamayat:
+    get:
+      tags:
+        - Data Mayat
+      summary: GET
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - Data Mayat
+      summary: POST
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                nama_lengkap:
+                  type: string
+                  example: Simon Riley
+                pangkat:
+                  type: string
+                  example: Lieutenant
+                tanggal_lahir:
+                  type: string
+                  example: '1984-05-17'
+                tanggal_wafat:
+                  type: string
+                  example: '2016-08-15'
+                nomor_identitas:
+                  type: integer
+                  example: '123456789'
+                foto_tentara:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /datamayat/1:
+    put:
+      tags:
+        - Data Mayat
+      summary: PUT
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                nama_lengkap:
+                  type: string
+                  example: Simon Riley
+                pangkat:
+                  type: string
+                  example: Lieutenant
+                tanggal_lahir:
+                  type: string
+                  example: '1984-05-17'
+                tanggal_wafat:
+                  type: string
+                  example: '2016-08-15'
+                nomor_identitas:
+                  type: integer
+                  example: '100398766'
+                foto_tentara:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Data Mayat
+      summary: DELETE
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /plotpemakaman:
+    get:
+      tags:
+        - Plot Pemakaman
+      summary: GET
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - Plot Pemakaman
+      summary: POST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                nomor_plot: A1
+                status_plot: Terisi
+                keterangan: Plot untuk tentara A
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /plotpemakaman/1:
+    put:
+      tags:
+        - Plot Pemakaman
+      summary: PUT
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                nomor_plot: A1
+                status_plot: tersedia
+                keterangan: Plot untuk tentara A
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Plot Pemakaman
+      summary: DELETE
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /kuburan:
+    get:
+      tags:
+        - Kuburan
+      summary: GET
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - Kuburan
+      summary: POST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                plot_id: 2
+                tentara_id: 2
+                nomor_kuburan: '01'
+                tanggal_dikubur: '2016-08-15'
+                status_kuburan: terawat
+                keterangan: kuburannya simon (ghost)
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /kuburan/1:
+    put:
+      tags:
+        - Kuburan
+      summary: PUT
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                plot_id: 2
+                tentara_id: 2
+                nomor_kuburan: '01'
+                tanggal_dikubur: '2016-08-15'
+                status_kuburan: tidak terawat
+                keterangan: kuburannya simon (ghost)
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Kuburan
+      summary: DELETE
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /pengelolapemakaman:
+    get:
+      tags:
+        - Pengelola Pemakaman
+      summary: GET
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - Pengelola Pemakaman
+      summary: POST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                nama_lengkap: Budiandra Senjawa
+                jabatan: Kepala Security
+                nomor_telepon: '087872711343'
+                email: senjawabudi1@gmail.com
+                alamat: Jl. Pluto 2 Block 4 No.23
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /pengelolapemakaman/1:
+    put:
+      tags:
+        - Pengelola Pemakaman
+      summary: PUT
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                nama_lengkap: Budiandra Senjawa
+                jabatan: Pengawas 1
+                nomor_telepon: '087872711343'
+                email: senjawabudi1@gmail.com
+                alamat: Jl. Pluto 2 Block 4 No.23
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Pengelola Pemakaman
+      summary: DELETE
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /kunjungan:
+    get:
+      tags:
+        - Kunjungan
+      summary: GET
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - Kunjungan
+      summary: POST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                kuburan_id: 2
+                tanggal_kunjungan: '2016-09-20'
+                nama_pengunjung: Tommy Riley
+                hubungan: brother
+                keterangan: ziarah kubur
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /kunjungan/1:
+    put:
+      tags:
+        - Kunjungan
+      summary: PUT
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                kuburan_id: 2
+                tanggal_kunjungan: '2016-09-20'
+                nama_pengunjung: Beth Riley
+                hubungan: sister-in-law
+                keterangan: ziarah kubur
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Kunjungan
+      summary: DELETE
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
